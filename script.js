@@ -1,6 +1,7 @@
 const nextBtns = document.querySelectorAll(".next-btn");
 const steps = document.querySelectorAll(".form-step");
 const sidebarSteps = document.querySelectorAll(".step");
+const prevBtns = document.querySelectorAll(".prev-btn")
 
 let currentStep = 0;
 
@@ -20,6 +21,15 @@ nextBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     if (currentStep < steps.length - 1) {
       currentStep++;
+      updateSteps();
+    }
+  });
+});
+
+prevBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (currentStep > 0) {
+      currentStep--;
       updateSteps();
     }
   });
