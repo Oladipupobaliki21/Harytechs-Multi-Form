@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Harytechs Multi-Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="sidebar">
+    <div class="step active">
+      <span class="circle">1</span>
+      <div>
+        <small>STEP 1</small>
+        <p>YOUR INFO</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="circle">2</span>
+      <div>
+        <small>STEP 2</small>
+        <p>PROJECT TYPE</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="circle">3</span>
+      <div>
+        <small>STEP 3</small>
+        <p>ADD-ONS</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="circle">4</span>
+      <div>
+        <small>STEP 4</small>
+        <p>SUMMARY</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-content">
+
+    <!-- Step 1 -->
+    <div class="form-step active">
+      <h2>Client Info</h2>
+      <p>Please provide your name, email address, and phone number.</p>
+
+      <label>Full-Name</label>
+      <input type="text" placeholder="e.g. Stephen King">
+
+      <label>Email Address</label>
+      <input type="email" placeholder="e.g. stephenking@lorem.com">
+
+      <label>Phone Number</label>
+      <input type="text" placeholder="e.g. +1 234 567 890">
+
+      <button class="next-btn">Next Step</button>
+    </div>
+
+    <!-- Step 2 -->
+<div class="form-step">
+      <h2>Project Type</h2>
+      <p>What type of project do you need?</p>
+    <div class="project-options">
+         <div class="project-card" data-value="Website">
+      <span>🌐</span>
+      <p>Website</p>
+        </div>
+        <div class="project-card" data-value="Mobile App">
+      <span>📱</span>
+      <p>Mobile App</p>
+        </div>
+
+        <div class="project-card" data-value="E-commerce">
+      <span>🛒</span>
+      <p>E-commerce</p>
+        </div>
+
+        <div class="project-card" data-value="Web Application">
+      <span>🧠</span>
+      <p>Web App</p>
+        </div>
+    </div>
+      <button class="prev-btn">Previous</button>
+      <button class="next-btn">Next Step</button>
+</div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
