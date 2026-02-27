@@ -91,6 +91,83 @@ body {
   transform: scale(1.05);
 }
 
+/* Shared grid layout */
+.budget-options,
+.timeline-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+
+/* Shared card style */
+.budget-card,
+.timeline-card {
+  border: 2px solid #ccc;
+  padding: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+/* Hover */
+.budget-card:hover,
+.timeline-card:hover {
+  border-color: #483eff;
+}
+
+/* Active */
+.budget-card.active,
+.timeline-card.active {
+  border-color: #483eff;
+  background: #eef1ff;
+  transform: scale(1.05);
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  resize: none;
+  font-family: inherit;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border-color: #483eff;
+}
+
+input[type="url"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.review-box {
+  background: #f8f9ff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+.form-step:last-child {
+  text-align: center;
+}
+
+.form-step:last-child h2 {
+  margin-bottom: 15px;
+  color: #483eff;
+}
+
+.form-step:last-child p {
+  color: #555;
+}
+
 input {
   width: 100%;
   padding: 10px;

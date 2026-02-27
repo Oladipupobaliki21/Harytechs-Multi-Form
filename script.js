@@ -3,9 +3,23 @@ const steps = document.querySelectorAll(".form-step");
 const sidebarSteps = document.querySelectorAll(".step");
 const prevBtns = document.querySelectorAll(".prev-btn");
 const projectCards = document.querySelectorAll(".project-card");
+const budgetCards = document.querySelectorAll(".budget-card");
+const timelineCards = document.querySelectorAll(".timeline-card");
+const descriptionInput = document.getElementById("projectDescription");
+const referenceInput = document.getElementById("referenceLink");
+const summaryProject = document.getElementById("summaryProject");
+const summaryBudget = document.getElementById("summaryBudget");
+const summaryTimeline = document.getElementById("summaryTimeline");
+// const summaryDescription = document.getElementById("summaryDescription");
+const submitBtn = document.getElementById("submitBtn");
 
 let currentStep = 0;
 let selectedProject ='';
+let selectedBudget = "";
+let selectedTimeline = "";
+// let projectDescription = "";
+// let referenceLink = "";
+
 
 function updateSteps() {
   steps.forEach((step, index) => {
@@ -33,7 +47,13 @@ nextBtns.forEach(btn => {
       updateSteps();
     }
   });
+//   if (currentStep === steps.length - 2) {
+//   updateSummary();
+// }
 });
+
+
+
 
 prevBtns.forEach(btn => {
   btn.addEventListener("click", () => {
@@ -44,21 +64,41 @@ prevBtns.forEach(btn => {
   });
 });
 
+
+submitBtn.addEventListener("click", () => {
+  currentStep++;
+  updateSteps();
+});
+
 projectCards.forEach(card => {
   card.addEventListener("click", () => {
 
     projectCards.forEach(c => c.classList.remove("active"));
 
-    card.classList.add("active");   // FIXED
+    card.classList.add("active");   
 
     selectedProject = card.dataset.value;
 
     console.log("Selected Project:", selectedProject);
   });
 });
-// nextBtns.addEventListener("click", () => {
-//   if (!selectedProject) {
-//     alert("Please select a project type.");
-//     return;
-//   }
-// });
+
+budgetCards.forEach(card => {
+  card.addEventListener ("click", () =>{
+    budgetCards.forEach(c => c.classList.remove("active"));
+    card.classList.add("active");
+    selectedBudget = card.dataset.value;
+
+    console.log("Selected Budget:", selectedBudget);
+  })
+})
+
+timelineCards.forEach(card => {
+  card.addEventListener( "click", () => {
+    timelineCards.forEach (c => c.classList.remove("active"));
+    card.classList.add ("active");
+    selectedBudget = card.dataset.value;
+console.log("Selected Timeline:", selectedTimeline);
+
+  })
+})
