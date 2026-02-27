@@ -87,6 +87,9 @@ body {
   border-color: #483eff;
   background: #eef1ff;
 }
+.project-card.active {
+  transform: scale(1.05);
+}
 
 input {
   width: 100%;
