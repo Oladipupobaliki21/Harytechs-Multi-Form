@@ -10,23 +10,31 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .container {
   display: flex;
   background: white;
-  width: 800px;
-  border-radius: 10px;
+  width: 100%;
+  max-width: 900px;
+  min-height: 600px;
+  border-radius: 15px;
+  padding: 15px;
   overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .sidebar {
   background: linear-gradient(180deg, #6d6b9c, #000002);
-  padding: 30px;
+  padding: 30px 20px;
   width: 250px;
+  border-radius: 12px;
   color: white;
 }
+
+
 
 .step {
   display: flex;
@@ -50,7 +58,6 @@ body {
   margin-right: 10px;
 }
 
-/* Form Section */
 .form-content {
   padding: 40px;
   flex: 1;
@@ -91,7 +98,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Shared grid layout */
+
 .budget-options,
 .timeline-options {
   display: grid;
@@ -100,7 +107,7 @@ body {
   margin: 20px 0;
 }
 
-/* Shared card style */
+
 .budget-card,
 .timeline-card {
   border: 2px solid #ccc;
@@ -112,13 +119,12 @@ body {
   font-weight: 500;
 }
 
-/* Hover */
+
 .budget-card:hover,
 .timeline-card:hover {
   border-color: #483eff;
 }
 
-/* Active */
 .budget-card.active,
 .timeline-card.active {
   border-color: #483eff;
@@ -187,4 +193,63 @@ button {
 
 button:hover {
   background: #6d6b9c;
+}
+
+
+
+@media (max-width: 768px) {
+
+  body {
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 180px;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .step {
+    margin: 0 10px;
+    flex-direction: column;
+  }
+
+  .step span {
+    display: none; 
+  }
+
+  .circle {
+    margin: 0;
+  }
+
+
+  .form-content {
+    background: white;
+    margin: -80px 20px 20px;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  }
+
+  .project-options,
+  .budget-options,
+  .timeline-options {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    width: 100%;
+  }
 }

@@ -67,7 +67,7 @@ prevBtns.forEach(btn => {
 
 submitBtn.addEventListener("click", () => {
   currentStep++;
-  updateSteps();
+  // updateSteps();
 });
 
 projectCards.forEach(card => {
