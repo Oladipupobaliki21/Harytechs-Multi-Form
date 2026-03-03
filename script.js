@@ -1,3 +1,4 @@
+
 const nextBtns = document.querySelectorAll(".next-btn");
 const steps = document.querySelectorAll(".form-step");
 const sidebarSteps = document.querySelectorAll(".step");
@@ -10,15 +11,16 @@ const referenceInput = document.getElementById("referenceLink");
 const summaryProject = document.getElementById("summaryProject");
 const summaryBudget = document.getElementById("summaryBudget");
 const summaryTimeline = document.getElementById("summaryTimeline");
-// const summaryDescription = document.getElementById("summaryDescription");
 const submitBtn = document.getElementById("submitBtn");
 
 let currentStep = 0;
 let selectedProject ='';
 let selectedBudget = "";
 let selectedTimeline = "";
-// let projectDescription = "";
-// let referenceLink = "";
+
+
+console.log("Form steps:", steps.length);
+console.log("Sidebar steps:", sidebarSteps.length);
 
 
 function updateSteps() {
@@ -36,20 +38,31 @@ function updateSteps() {
 nextBtns.forEach(btn => {
   btn.addEventListener("click", () => {
 
-    // If on Project Step (index 1) and nothing selected
     if (currentStep === 1 && !selectedProject) {
       alert("Please select a project type.");
       return;
     }
+    if (currentStep === 2 && !selectedBudget) {
+        alert("Please select a budget range.");
+        return;
+      } 
+      if (currentStep === 3 && !selectedTimeline) {
+        alert("Please select a timeline.");
+        return;
+      };
 
     if (currentStep < steps.length - 1) {
       currentStep++;
       updateSteps();
+        // if (currentStep === 4) {
+        //   // summaryProject.textContent = selectedProject || "N/A";
+        //   summaryBudget.textContent = selectedBudget || "N/A";
+        //   summaryTimeline.textContent = selectedTimeline || "N/A";
+        // }
+
     }
   });
-//   if (currentStep === steps.length - 2) {
-//   updateSummary();
-// }
+
 });
 
 
@@ -64,10 +77,9 @@ prevBtns.forEach(btn => {
   });
 });
 
-
 submitBtn.addEventListener("click", () => {
   currentStep++;
-  // updateSteps();
+  updateSteps();
 });
 
 projectCards.forEach(card => {
@@ -97,7 +109,7 @@ timelineCards.forEach(card => {
   card.addEventListener( "click", () => {
     timelineCards.forEach (c => c.classList.remove("active"));
     card.classList.add ("active");
-    selectedBudget = card.dataset.value;
+    selectedTimeline = card.dataset.value;
 console.log("Selected Timeline:", selectedTimeline);
 
   })
