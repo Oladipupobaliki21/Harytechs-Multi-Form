@@ -54,18 +54,12 @@ nextBtns.forEach(btn => {
     if (currentStep < steps.length - 1) {
       currentStep++;
       updateSteps();
-        // if (currentStep === 4) {
-        //   // summaryProject.textContent = selectedProject || "N/A";
-        //   summaryBudget.textContent = selectedBudget || "N/A";
-        //   summaryTimeline.textContent = selectedTimeline || "N/A";
-        // }
+      
 
     }
   });
 
 });
-
-
 
 
 prevBtns.forEach(btn => {
